@@ -4,6 +4,12 @@
 
 Built with a **zero-server architecture**, all data processing happens directly in your browser. Sensitive loan agreements and financial data never leave your device.
 
+Try it out:
+
+## 🚀 Live Demo
+🔗 https://whimsical-croquembouche-0cbbdd.netlify.app
+
+
 ## 🚀 Key Features
 
 *   **🤖 AI Analysis Engine**: Powered by Google Gemini 1.5, instantly extract covenant terms and analyze risks from PDF credit agreements.
