@@ -197,7 +197,7 @@ async function callGeminiAPI(prompt, isStressTest = false) {
                     parts: [{
                         text: isStressTest
                             ? `You are a loan covenant analysis expert. Analyze this stress test scenario:\n\n${prompt}\n\nProvide a CONCISE analysis (max 150 words). Focus strictly on:\n1. The specific DSCR impact.\n2. Three key mitigation strategies.\n\nDo not write long introductions.`
-                            : `You are a helpful AI assistant...` // (Keep existing chat prompt or simplify if needed, but user focused on stress test)
+                            : `You are an expert AI financial assistant for LoanPulse AI. Answer the following user query:\n\n${prompt}`
                     }]
                 }]
             })
@@ -285,8 +285,8 @@ function getIntelligentMock(prompt, isStressTest) {
 
     // Leverage Ratio questions
     if (lowerPrompt.includes('leverage') || (lowerPrompt.includes('debt') && lowerPrompt.includes('ebitda'))) {
-        const ebitdaMatch = prompt.match(/ebitda[:\s]+(\d+)/i);
-        const debtMatch = prompt.match(/debt[:\s]+(\d+)/i);
+        const ebitdaMatch = prompt.match(/ebitda\D*(\d+)/i);
+        const debtMatch = prompt.match(/debt\D*(\d+)/i);
 
         if (ebitdaMatch && debtMatch) {
             const ebitda = parseInt(ebitdaMatch[1]);
